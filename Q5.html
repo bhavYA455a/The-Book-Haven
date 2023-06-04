@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title> home </title>
+</head>
+
+<body bgcolor="black">
+    <h1>
+        <font size="7" color="white">
+            <center> <b> The Book Haven <br></b> </center>
+        </font>
+    </h1>
+    <hr size="20" color="lightgreen">
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <a href="Home.html">
+            <font color="white"> <b> HOME </b> </font>
+        </a> &nbsp &nbsp
+        &nbsp &nbsp &nbsp &nbsp
+        <a href="about.html">
+            <font color="white"><b>ABOUT US </b> </font>
+        </a> &nbsp
+        &nbsp &nbsp &nbsp &nbsp &nbsp
+        <a href="Category.html">
+            <font color="white"> <b> CATEGORY </b> </font>
+        </a> &nbsp
+        &nbsp &nbsp &nbsp &nbsp &nbsp
+        <a href="Signup.html">
+            <font color="white"> <b>SIGN UP </b> </font>
+        </a> &nbsp
+    </div>
+    &nbsp &nbsp &nbsp &nbsp &nbsp
+    <hr size="20" color="lightgreen">
+    <div style="display: flex; gap: 10px;">
+        <img src="https://media.istockphoto.com/id/1129874863/photo/books-on-display-in-the-corner-of-a-second-hand-bookstore.jpg?s=612x612&w=0&k=20&c=ez0PTZuEp8Vn5SFMSxOVggudvgsHFKsFKlAwObaXkuI="
+            style="width: 850px; height:450px; margin: 1rem 0rem;">
+        <div>
+            <h2 style="color: white;">Display Date</h2>
+            <input type="text" name="" id="dis" placeholder="Date Displayed here">
+            <input type="button" value="Display Date" onclick="display()">
+            <h2 style="color: white;">Display Factorial</h2>
+            <input type="button" value="Factorial" onclick="factorialcalc()">
+            <h2 style="color: white;">Display Table</h2>
+            <input type="button" value="Print Table" onclick="printTable()">
+            <h2 style="color: white;">Display sum of n numbers</h2>
+            <input type="button" value="Sum of n numbers" onclick="addsum()">
+        </div>
+    </div>
+    <hr size="20" color="lightgreen">
+    <h6 style="text-align: center;">
+        <font size="5" color="white"> <b> Made by (2020-24) batch </b> </font>
+    </h6>
+</body>
+
+<script>
+    function display() {
+        var x = "You have clicked";
+        var d = new Date();
+        var date = d.getDate();
+        var month = d.getMonth();
+        month++;
+        var year = d.getFullYear();
+        document.getElementById("dis").value = date + "/" + month + "/" + year;
+    }
+
+    function factorialcalc() {
+        number = parseInt(prompt('Enter the number you want to calculate factorial of : '));
+        let factorial = 1;
+        for (i = 1; i <= number; i++) {
+            factorial = factorial * i
+        }
+        alert("the factorial of " + number + " is " + factorial);
+    }
+
+    function addsum() {
+        const number = parseInt(prompt('Enter a positive integer: '));
+        let sum = 0;
+        for (let i = 1; i <= number; i++) {
+            sum += i;
+        }
+        alert("the sum of all your numbers is " + sum)
+    }
+
+    function printTable() {
+        var n = prompt("Enter positive value for n: ", " ");
+        if (!isNaN(n)) {
+            var table = "";
+            var number = "";
+            for (i = 1; i <= 10; i++) {
+                number = n * i;
+                table += n + " * " + i + " = " + number + "\n";
+            }
+            alert(table);
+        }
+        else {
+            alert("Enter positive value");
+            n = prompt("Enter positive value for n: ", " ");
+        }
+    }
+
+</script>
+
+</html>
